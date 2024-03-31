@@ -690,6 +690,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "document-features"
+version = "0.2.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef5282ad69563b5fc40319526ba27e0e7363d552a896f0297d54f767717f9b95"
+dependencies = [
+ "litrs",
+]
+
+[[package]]
 name = "downcast-rs"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -697,16 +706,18 @@ checksum = "9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650"
 
 [[package]]
 name = "ecolor"
-version = "0.25.0"
-source = "git+https://github.com/emilk/egui?rev=5d0bc2bf#5d0bc2bf7d1066a625b57b5576ea3ed7d3930e15"
+version = "0.26.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "03cfe80b1890e1a8cdbffc6044d6872e814aaf6011835a2a5e2db0e5c5c4ef4e"
 dependencies = [
  "bytemuck",
 ]
 
 [[package]]
 name = "egui"
-version = "0.25.0"
-source = "git+https://github.com/emilk/egui?rev=5d0bc2bf#5d0bc2bf7d1066a625b57b5576ea3ed7d3930e15"
+version = "0.26.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "180f595432a5b615fc6b74afef3955249b86cfea72607b40740a4cd60d5297d0"
 dependencies = [
  "ahash 0.8.7",
  "epaint",
@@ -715,22 +726,26 @@ dependencies = [
 
 [[package]]
 name = "egui-wgpu"
-version = "0.25.0"
-source = "git+https://github.com/emilk/egui?rev=5d0bc2bf#5d0bc2bf7d1066a625b57b5576ea3ed7d3930e15"
+version = "0.26.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "86f2d75e1e70228e7126f828bac05f9fe0e7ea88e9660c8cebe609bb114c61d4"
 dependencies = [
  "bytemuck",
+ "document-features",
  "egui",
  "epaint",
  "log",
  "thiserror",
  "type-map",
+ "web-time",
  "wgpu",
 ]
 
 [[package]]
 name = "egui_plot"
-version = "0.25.0"
-source = "git+https://github.com/emilk/egui?rev=5d0bc2bf#5d0bc2bf7d1066a625b57b5576ea3ed7d3930e15"
+version = "0.26.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "803bfcb1ad294dd7f106e26ac9199730d16051496ddb66b10fdb6529eb43df58"
 dependencies = [
  "egui",
 ]
@@ -738,7 +753,8 @@ dependencies = [
 [[package]]
 name = "egui_winit_platform"
 version = "0.21.0"
-source = "git+https://github.com/pema99/egui_winit_platform?rev=2756ed9#2756ed90b708b70fe132454d44049771eada7a9a"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "16fdbf3eb35064a8829d799885837ecf38421c83a0e84b3d60028f46f320e9a2"
 dependencies = [
  "egui",
  "winit",
@@ -762,8 +778,9 @@ dependencies = [
 
 [[package]]
 name = "emath"
-version = "0.25.0"
-source = "git+https://github.com/emilk/egui?rev=5d0bc2bf#5d0bc2bf7d1066a625b57b5576ea3ed7d3930e15"
+version = "0.26.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6916301ecf80448f786cdf3eb51d9dbdd831538732229d49119e2d4312eaaf09"
 dependencies = [
  "bytemuck",
 ]
@@ -779,8 +796,9 @@ dependencies = [
 
 [[package]]
 name = "epaint"
-version = "0.25.0"
-source = "git+https://github.com/emilk/egui?rev=5d0bc2bf#5d0bc2bf7d1066a625b57b5576ea3ed7d3930e15"
+version = "0.26.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77b9fdf617dd7f58b0c8e6e9e4a1281f730cde0831d40547da446b2bb76a47af"
 dependencies = [
  "ab_glyph",
  "ahash 0.8.7",
@@ -1584,6 +1602,12 @@ name = "linux-raw-sys"
 version = "0.4.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "01cda141df6706de531b6c46c3a33ecca755538219bd484262fa09410c13539c"
+
+[[package]]
+name = "litrs"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b4ce301924b7887e9d637144fdade93f9dfff9b60981d4ac161db09720d39aa5"
 
 [[package]]
 name = "lock_api"
@@ -2397,8 +2421,9 @@ dependencies = [
 
 [[package]]
 name = "russimp"
-version = "3.1.1"
-source = "git+https://github.com/jkvargas/russimp?rev=67accd0#67accd02a83e19d950804491a7d45c700f673c90"
+version = "3.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "581bbd613b048d7eaf9a092a70b082835f02683c3a7215ea3038cd4ad6d7807b"
 dependencies = [
  "derivative",
  "num-derive",

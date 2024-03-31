@@ -4,7 +4,7 @@ use std::time::Instant;
 use std::{iter, sync::Arc};
 use std::fmt::Debug;
 
-use egui_wgpu::renderer::ScreenDescriptor;
+use egui_wgpu::{CallbackResources, ScreenDescriptor};
 use egui_winit_platform::Platform;
 use wgpu::util::DeviceExt;
 use winit::dpi::PhysicalSize;
@@ -68,7 +68,7 @@ pub struct App<'a> {
     surface_format: wgpu::TextureFormat,
     surface_config: wgpu::SurfaceConfiguration,
     surface: wgpu::Surface<'a>,
-    egui_renderer: egui_wgpu::renderer::Renderer,
+    egui_renderer: egui_wgpu::Renderer,
 }
 
 impl App<'_> {
@@ -117,7 +117,7 @@ impl App<'_> {
         };
         surface.configure(&device, &surface_config);
 
-        let egui_renderer = egui_wgpu::renderer::Renderer::new(&device, surface_format, None, 1);
+        let egui_renderer = egui_wgpu::Renderer::new(&device, surface_format, None, 1);
         let tracing_state = Arc::new(TracingState::new(size.width, size.height));
         Self {
             tracing_state,
@@ -550,8 +550,9 @@ impl App<'_> {
                         &self,
                         _device: &wgpu::Device,
                         queue: &wgpu::Queue,
+                        _screen_descriptor: &ScreenDescriptor,
                         _egui_encoder: &mut wgpu::CommandEncoder,
-                        typemap: &mut egui_wgpu::CallbackResources,
+                        typemap: &mut CallbackResources,
                     ) -> Vec<wgpu::CommandBuffer> {
                         if let Some(resources) = typemap.get::<PaintCallbackResources>() {
                             resources.prepare(queue, &self.framebuffer, self.width, self.height, self.tonemapping);
